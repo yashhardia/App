@@ -1,0 +1,29 @@
+<ion-view style="background-color: #ff3333 "cache-view="false" view-title="{{'raise concern' | translate}}" >
+   <ion-nav-buttons side="left">
+		<button class="button button-icon button-clear ion-navicon" menu-toggle="left"> </button>
+	</ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear jsm-home" ng-click="home()"></button>
+    </ion-nav-buttons>
+  <ion-content class="centerPage" id="loginPage">
+    <div class="list formList">
+      <form name="SignInForm" novalidate ng-submit="SignInForm.$valid && signIn()">
+        <label class="item item-input item-icon-left"
+      ng-class="{ 'has-error' : (SignInForm.email.$error.required || SignInForm.email.$error.pattern)  && (SignInForm.email.$dirty || submitted),
+      'valid' : SignInForm.email.$valid && (SignInForm.email.$dirty || SignInForm.$submitted)}">
+            <i class="icon mdi mdi-email-outline"></i>
+          <input type="email" placeholder="{{'enterEmail' | translate}}" name="email"  ng-model="login.email">
+        </label>
+        <label class="item item-input item-icon-left"
+      ng-class="{ 'has-error' : SignInForm.message.$error.required && (SignInForm.message.$dirty || submitted),
+      'valid' : SignInForm.message.$valid  && (SignInForm.message.$dirty || SignInForm.$submitted)}">
+            <i class="icon mdi mdi-lock-outline"></i>
+          <input type="text"
+          placeholder="{{'message' | translate}}" name="message" ng-model="login.message" required="true">
+        </label>
+
+        <button class="button button-block button-assertive" type="submit" ng-click="submitted=true"> {{'Submit' | translate}} </button>
+      </form>
+     </div>
+  </ion-content>
+</ion-view>

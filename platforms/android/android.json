@@ -1,0 +1,411 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NativePageTransitions\"><param name=\"android-package\" value=\"com.telerik.plugins.nativepagetransitions.NativePageTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Stripe\"><param name=\"android-package\" value=\"com.telerik.stripe.StripePlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Market\"><param name=\"android-package\" value=\"com.xmartlabs.cordova.market.Market\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppVersion\"><param name=\"android-package\" value=\"uk.co.whiteoctober.cordova.AppVersion\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"android-package\" value=\"org.apache.cordova.globalization.Globalization\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppRate\"><param name=\"android-package\" value=\"org.pushandplay.cordova.apprate.AppRate\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ThemeableBrowser\"><param name=\"android-package\" value=\"com.initialxy.cordova.themeablebrowser.ThemeableBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/values/strings.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"stripe_api_key\">sk_test_0QwybAha78UPSNkdLVyLK7JF</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.crunchy.crunchy.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.crunchy.crunchy.permission.RECEIVE_ADM_MESSAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.crunchy.crunchy\" /></intent-filter></receiver>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "com.telerik.stripe": {
+            "API_KEY": "sk_test_0QwybAha78UPSNkdLVyLK7JF",
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "com.xmartlabs.cordova.market": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-apprate": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.crunchy.crunchy"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
+            "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
+            "clobbers": [
+                "PayPalMobile"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+            "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+            "clobbers": [
+                "window.plugins.nativepagetransitions"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/stripe.js",
+            "id": "com.telerik.stripe.stripe",
+            "clobbers": [
+                "stripe"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/charges.js",
+            "id": "com.telerik.stripe.charges",
+            "clobbers": [
+                "stripe.charges"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/customers.js",
+            "id": "com.telerik.stripe.customers",
+            "clobbers": [
+                "stripe.customers"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/recipients.js",
+            "id": "com.telerik.stripe.recipients",
+            "clobbers": [
+                "stripe.recipients"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/subscriptions.js",
+            "id": "com.telerik.stripe.subscriptions",
+            "clobbers": [
+                "stripe.subscriptions"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/transfers.js",
+            "id": "com.telerik.stripe.transfers",
+            "clobbers": [
+                "stripe.transfers"
+            ]
+        },
+        {
+            "file": "plugins/com.telerik.stripe/www/coupons.js",
+            "id": "com.telerik.stripe.coupons",
+            "clobbers": [
+                "stripe.coupons"
+            ]
+        },
+        {
+            "file": "plugins/com.xmartlabs.cordova.market/www/market.js",
+            "id": "com.xmartlabs.cordova.market.Market",
+            "clobbers": [
+                "cordova.plugins.market"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+            "id": "cordova-plugin-app-version.AppVersionPlugin",
+            "clobbers": [
+                "cordova.getAppVersion"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "id": "cordova-plugin-dialogs.notification",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+            "id": "cordova-plugin-dialogs.notification_android",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-globalization/www/GlobalizationError.js",
+            "id": "cordova-plugin-globalization.GlobalizationError",
+            "clobbers": [
+                "window.GlobalizationError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-globalization/www/globalization.js",
+            "id": "cordova-plugin-globalization.globalization",
+            "clobbers": [
+                "navigator.globalization"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-apprate/www/AppRate.js",
+            "id": "cordova-plugin-apprate.AppRate",
+            "clobbers": [
+                "AppRate"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-apprate/www/locales.js",
+            "id": "cordova-plugin-apprate.locales",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "clobbers": [
+                "Connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-themeablebrowser/www/themeablebrowser.js",
+            "id": "cordova-plugin-themeablebrowser.themeablebrowser",
+            "clobbers": [
+                "cordova.ThemeableBrowser"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+            "id": "cordova-plugin-x-toast.Toast",
+            "clobbers": [
+                "window.plugins.toast"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+            "id": "cordova-plugin-x-toast.tests"
+        },
+        {
+            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+            "id": "ionic-plugin-keyboard.keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
+        },
+        {
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "clobbers": [
+                "OneSignal"
+            ]
+        }
+    ]
+}

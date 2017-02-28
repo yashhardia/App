@@ -1,6 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.crunchy.crunchy" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <preference name="loglevel" value="DEBUG" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="PayPalMobile">
         <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin" />
     </feature>
@@ -17,8 +35,8 @@
     <feature name="AppVersion">
         <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
     </feature>
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    <feature name="AppRate">
+        <param name="android-package" value="org.pushandplay.cordova.apprate.AppRate" />
     </feature>
     <feature name="Globalization">
         <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
@@ -26,29 +44,11 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <feature name="AppRate">
-        <param name="android-package" value="org.pushandplay.cordova.apprate.AppRate" />
-    </feature>
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-    </feature>
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="StatusBar">
-        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="ThemeableBrowser">
         <param name="android-package" value="com.initialxy.cordova.themeablebrowser.ThemeableBrowser" />
-    </feature>
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
     </feature>
     <feature name="SocialSharing">
         <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
@@ -56,13 +56,23 @@
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
-    <feature name="Keyboard">
-        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="OneSignalPush">
         <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <name>Crunchy</name>
+    <description>
+        It is Mobile Restaurant App.
+    </description>
+    <author email="you@example.com" href="http://example.com.com/">
+      Crunchy
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-navigation href="http://192.168.1.113:8100" />
+    <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
     <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
     <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -81,15 +91,7 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-    <name>Crunchy</name>
-    <description>
-        It is Mobile Restaurant App.
-    </description>
-    <author email="you@example.com" href="http://example.com.com/">
-      Crunchy
-    </author>
-    <content src="index.html" />
-    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -97,6 +99,4 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <allow-navigation href="http://192.168.1.113:8100" />
-    <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
 </widget>

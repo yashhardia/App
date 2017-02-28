@@ -562,6 +562,33 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ap
         controller: 'review'
       }
     }
+  })
+      .state('app.infotainment', {
+    url: '/infotainment/',
+    views: {
+      'menuContent': {
+        templateUrl: 'modules/home/infotainment.html',
+        controller: 'infotainment'
+      }
+    }
+  })
+      .state('app.infotainmentcategary', {
+    url: '/infotainmentcategary',
+    views: {
+      'menuContent': {
+        templateUrl: 'modules/home/infotainmentcategary.html',
+        controller: 'infotainmentcategary'
+      }
+    }
+  })
+      .state('app.singleInfotainment', {
+    url: '/singleInfotainment/:mediaId',
+    views: {
+      'menuContent': {
+        templateUrl: 'modules/home/singleInfotainment.html',
+        controller: 'singleInfotainment'
+      }
+    }
   });
     $urlRouterProvider.otherwise('/app/dashboard');
 });

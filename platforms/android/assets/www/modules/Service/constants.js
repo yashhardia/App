@@ -5,6 +5,7 @@ angular.module('declarations', []).constant('appConst', {
         "service_login": "http://192.168.1.113/Files/service_login/",
         "item_image_url": 'http://192.168.1.113/Files/uploads/item_images/',
         "menu_image_url": 'http://192.168.1.113/Files/uploads/menu_images/thumbs/',
+        "infotainment_url": 'http://192.168.1.113/Files/uploads/media/',
         "addon_image_url": 'http://192.168.1.113/Files/uploads/addon_images/thumbs/',
         "gallery_image_url": 'http://192.168.1.113/Files/uploads/gallery_images/thumbs/',
         "item_image_url_thumb": 'http://192.168.1.113/Files/uploads/item_images/thumbs/',

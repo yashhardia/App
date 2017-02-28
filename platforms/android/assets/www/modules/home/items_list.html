@@ -3,7 +3,7 @@
 		<button ui-sref="app.dashboard" class="button back-button buttons button-clear header-item"><i class="icon ion-android-arrow-back"></i></button>
 	</ion-nav-buttons>
 	<ion-nav-buttons side="right">
-		<button  ng-controller="itemsListCtrl" id="cart_list_icon1" ng-click="viewCart()" class="button-icon button button-clear flaticon-trolley"><i class="badge badge-light header-badge"><span ng-if="cartCount!=0">{{cartCount}}</span></i></button>
+		<button  ng-controller="itemsListCtrl" id="cart_list_icon1" ng-click="viewCart()" class="button-icon button button-clear flaticon-shop"><i class="badge badge-light header-badge"><span ng-if="cartCount!=0">{{cartCount}}</span></i></button>
 	</ion-nav-buttons>
 	<ion-content id="items_list_page" ng-init="getItemsList()">
 		<ion-slide-box class="dashboard-slide" on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" slide-interval="6000">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="buttons item-buttons">
 					<button class="button button-icon ion ion-ios-gear-outline" ng-click="openSelectedItem(menuSubItem)"></button>
-					<button class="button button-icon button-cart flaticon-commerce item_list" ng-click="addToCart(menuSubItem)"></button>
+					<!-- <button class="button button-icon button-cart flaticon-commerce item_list" ng-click="addToCart(menuSubItem)"></button> -->
 				</div>
 			</a>
 			<ion-list class="subSubServiceList" ng-if="data.clientSide=='Addons'">

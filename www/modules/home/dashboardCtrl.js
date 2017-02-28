@@ -267,7 +267,7 @@ app.controller('cartListCtrl', function($scope, $location, appConst, globalMetho
             $location.path(appConst.path.home_delivery);
         } else {
             $rootScope.loginThrough = "order";
-            $location.path(appConst.path.login);
+            $location.path(appConst.path.registration);
         }
     }
     $scope.handleEditDoneIcons = function(idShow, idHide) {
@@ -729,7 +729,7 @@ app.controller('orderHistoryCtrl', function($scope, $location, appConst, globalM
             });
         } else {
             $rootScope.loginThrough = 'orderHistory';
-            $location.path(appConst.path.login);
+            $location.path(appConst.path.registration);
         }
     }
     $scope.orderItems = [];
@@ -1251,7 +1251,7 @@ app.controller('menuCtrl', function($scope, $location, appConst, globalMethods, 
            if (globalMethods.checkUserLogin()) {
                $location.path('/app/viewProfile');
            } else {
-               $location.path(appConst.path.login);
+               $location.path(appConst.path.registration);
            }
        }
 
@@ -1669,7 +1669,6 @@ app.controller('ratings', function($scope){
         });}
         $scope.listInfotainment = function(mId)
        {
-        alert(mId);
             var id = {media_id:mId};
        Services.webServiceCallPost(id,'fetch_media').then(function(response) {
             $scope.result = response['media'];

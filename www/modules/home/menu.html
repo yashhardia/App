@@ -33,7 +33,8 @@
         <ion-item menu-close href="#/app/changePassword"  ng-click="changePasswordPage()" ng-if="checkUserLogin()" class="item-icon-left"><i class="icon flaticon-padlock"></i> {{'changePassword' | translate}} </ion-item>
         <ion-item menu-close href=""  ng-click="settings()" class="item-icon-left"><i class="icon flaticon-language"></i>{{'changeLanguage' | translate}}</ion-item>
         <ion-item menu-close href="#/app/login" ng-click="logout()" ng-show="checkUserLogin()" class="item-icon-left"><i class="icon flaticon-login"></i> {{'signOut' | translate}} </ion-item>
-        <ion-item menu-close href="#/app/login" ng-click="setLogin()" ng-if="!checkUserLogin()" class="item-icon-left"><i class="icon flaticon-login"></i> {{'login' | translate}} </ion-item>
+        <!-- <ion-item menu-close href="#/app/login" ng-click="setLogin()" ng-if="!checkUserLogin()" class="item-icon-left"><i class="icon flaticon-login"></i> {{'login' | translate}} </ion-item > -->
+        <ion-item menu-close href="#/app/login" ui-sref="registration" ng-if="!checkUserLogin()" class="item-icon-left"><i class="icon flaticon-login"></i> {{'login' | translate}} </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

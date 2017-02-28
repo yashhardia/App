@@ -3,7 +3,7 @@
 		<button ui-sref="app.items_list" class="button back-button buttons button-clear header-item"><i class="icon ion-android-arrow-back"></i></button>
 	</ion-nav-buttons>
 	<ion-nav-buttons side="right" >
-		<button id="cart_list_icon1" ng-click="viewCart()" class="button-icon button button-clear flaticon-trolley"><i class="badge badge-light header-badge"><span ng-if="cartCount!=0">{{cartCount}}</span></i></button>
+		<button id="cart_list_icon1" ng-click="viewCart()" class="button-icon button button-clear flaticon-shop"><i class="badge badge-light header-badge"><span ng-if="cartCount!=0">{{cartCount}}</span></i></button>
 	</ion-nav-buttons>
 	<ion-nav-title> {{selected_item.item_name}} </ion-nav-title>
 	<ion-content>
@@ -12,8 +12,8 @@
 			<div class="list profileDetails">
 				<div class="item item-icon-left item-button-right">
 					<i class="icon"><span>{{siteSettings.currency_symbol}}</span></i> {{'cost' | translate}} {{selected_item.item_cost}}
-					<button class="button button-icon button-green flaticon-commerce" ng-click="addToCart(selected_item)">
-			        </button>
+					<!-- <button class="button button-icon button-green flaticon-commerce" ng-click="addToCart(selected_item)">
+			        </button> -->
 				</div>
 				<div class="item item-icon-left item-button-right" ng-click="customizeOrder(selected_item)" ng-if="selected_item.options.length!=0">
 					<i class="icon ion ion-ios-pie-outline"></i> {{'sizes' | translate}}
@@ -30,7 +30,8 @@
 					</p>
 				</div>
 			</div>
-			<button class="button-block button button-assertive" ng-disabled="disableButtons" ng-style="disableTagButton" ng-click="viewCart()">{{'viewCart' | translate}}</button>
+			<!-- <button class="button-block button button-assertive" ng-disabled="disableButtons" ng-style="disableTagButton" ng-click="viewCart()">{{'viewCart' | translate}}</button> -->
+			<button class="button-block button button-assertive" ng-disabled="disableButtons" ng-style="disableTagButton" ng-click="addToCart(selected_item)">{{'addToCart' | translate}}</button>
 		</div>
 
 	</ion-content>

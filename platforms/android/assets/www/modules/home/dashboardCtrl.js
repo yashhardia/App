@@ -267,7 +267,7 @@ app.controller('cartListCtrl', function($scope, $location, appConst, globalMetho
             $location.path(appConst.path.home_delivery);
         } else {
             $rootScope.loginThrough = "order";
-            $location.path(appConst.path.login);
+            $location.path(appConst.path.registration);
         }
     }
     $scope.handleEditDoneIcons = function(idShow, idHide) {
@@ -729,7 +729,7 @@ app.controller('orderHistoryCtrl', function($scope, $location, appConst, globalM
             });
         } else {
             $rootScope.loginThrough = 'orderHistory';
-            $location.path(appConst.path.login);
+            $location.path(appConst.path.registration);
         }
     }
     $scope.orderItems = [];
@@ -1661,3 +1661,64 @@ app.controller('ratings', function($scope){
     $scope.Data = files.responseData.opening_crawl;
   })
 });
+    app.controller('infotainmentcategary', function($scope,Services,appConst,$rootScope,$state,$stateParams){
+        var parent; var sub;        
+      $scope.fetch = function() {
+        Services.webServiceCallPost('','fetch_categary').then(function(response) {
+            $scope.parent_categary = response['parent_categary'];
+        });}
+        $scope.listInfotainment = function(mId)
+       {
+            var id = {media_id:mId};
+       Services.webServiceCallPost(id,'fetch_media').then(function(response) {
+            $scope.result = response['media'];
+            $scope.url = appConst.serviceUrl.infotainment_url;
+        });
+       }
+       $scope.singleInfotainment = function(mId)
+       {
+            $state.go('app.singleInfotainment',{mediaId:mId});
+       } 
+        //  $scope.assignparent=function(selectvalue){
+        //    parent = selectvalue;
+        //    // $state.go('app.infotainment');
+        // };
+
+        // $scope.assignsub=function(selectvalue){
+        //    sub = selectvalue;
+        //    //alert(parent+sub);
+         
+        // };
+
+
+        // $scope.gotonext=function(){
+        //    $state.go('app.infotainment',{pid:parent,sid:sub});
+        // };
+        
+        
+});
+    app.controller('infotainment', function($state,$scope,Services,appConst,$rootScope,$stateParams){
+         var id = {media_id:$stateParams.mediaId};
+       Services.webServiceCallPost(id,'fetch_media').then(function(response) {
+            $scope.result = response['media'];
+            $scope.url = appConst.serviceUrl.infotainment_url;
+        });
+       $scope.fetch = function() {
+        Services.webServiceCallPost('','fetch_categary').then(function(response) {
+            $scope.parent_categary = response['parent_categary'];
+            $scope.sub_categary = response['sub_categary'];
+
+        });}
+       
+    }); 
+    app.controller('singleInfotainment', function($scope,Services,appConst,$rootScope,$stateParams){
+        var id = {media_id:$stateParams.mediaId};
+        $scope.result={};
+        $scope.url = appConst.serviceUrl.infotainment_url;
+         Services.webServiceCallPost(id,'fetch_media_by_id').then(function(response) {
+            $scope.result = response['media'][0];
+           var file_name = result['file_name'];
+           $scope.file_name = file_name.split('.');
+          //  alert(JSON.stringify($scope.result));
+        });
+    }); 

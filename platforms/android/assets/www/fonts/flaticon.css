@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 21/02/2017 07:12
+  	Creation date: 22/02/2017 09:07
   	*/
 
 @font-face {
@@ -26,20 +26,18 @@
   font-family: Flaticon;
         font-size: 20px;
 font-style: normal;
-
 }
 
 .flaticon-about-us:before { content: "\f100"; }
 .flaticon-add-friend:before { content: "\f101"; }
 .flaticon-edit:before { content: "\f102"; }
-.flaticon-file:before { content: "\f103"; }
-.flaticon-heart:before { content: "\f104"; }
-.flaticon-history:before { content: "\f105"; }
-.flaticon-language:before { content: "\f106"; }
-.flaticon-login:before { content: "\f107"; }
+.flaticon-history:before { content: "\f103"; }
+.flaticon-interface:before { content: "\f104"; }
+.flaticon-language:before { content: "\f105"; }
+.flaticon-login:before { content: "\f106"; }
+.flaticon-newspaper:before { content: "\f107"; }
 .flaticon-shop:before { content: "\f108"; }
 .flaticon-signs:before { content: "\f109"; }
-.flaticon-speech-bubble:before { content: "\f10a"; }
-.flaticon-star:before { content: "\f10b"; }
-.flaticon-star-1:before { content: "\f10c"; }
-.flaticon-view:before { content: "\f10d"; }
+.flaticon-star:before { content: "\f10a"; }
+.flaticon-star-1:before { content: "\f10b"; }
+.flaticon-television:before { content: "\f10c"; }

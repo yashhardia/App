@@ -1666,38 +1666,51 @@ app.controller('ratings', function($scope){
       $scope.fetch = function() {
         Services.webServiceCallPost('','fetch_categary').then(function(response) {
             $scope.parent_categary = response['parent_categary'];
-            $scope.sub_categary = response['sub_categary'];
-        });} 
+        });}
+        $scope.listInfotainment = function(mId)
+       {
+        alert(mId);
+            var id = {media_id:mId};
+       Services.webServiceCallPost(id,'fetch_media').then(function(response) {
+            $scope.result = response['media'];
+            $scope.url = appConst.serviceUrl.infotainment_url;
+        });
+       }
+       $scope.singleInfotainment = function(mId)
+       {
+            $state.go('app.singleInfotainment',{mediaId:mId});
+       } 
+        //  $scope.assignparent=function(selectvalue){
+        //    parent = selectvalue;
+        //    // $state.go('app.infotainment');
+        // };
 
-         $scope.assignparent=function(selectvalue){
-           parent = selectvalue;
-           // $state.go('app.infotainment');
-        };
-
-        $scope.assignsub=function(selectvalue){
-           sub = selectvalue;
-           //alert(parent+sub);
+        // $scope.assignsub=function(selectvalue){
+        //    sub = selectvalue;
+        //    //alert(parent+sub);
          
-        };
+        // };
 
 
-        $scope.gotonext=function(){
-           $state.go('app.infotainment',{pid:parent,sid:sub});
-        };
+        // $scope.gotonext=function(){
+        //    $state.go('app.infotainment',{pid:parent,sid:sub});
+        // };
         
         
 });
     app.controller('infotainment', function($state,$scope,Services,appConst,$rootScope,$stateParams){
-        var data = {pid:$stateParams.pid,sid:$stateParams.sid};
-       Services.webServiceCallPost(data,'fetch_media').then(function(response) {
+         var id = {media_id:$stateParams.mediaId};
+       Services.webServiceCallPost(id,'fetch_media').then(function(response) {
             $scope.result = response['media'];
-
             $scope.url = appConst.serviceUrl.infotainment_url;
         });
-       $scope.singleInfotainment = function(mId)
-       {
-            $state.go('app.singleInfotainment',{mediaId:mId});
-       }
+       $scope.fetch = function() {
+        Services.webServiceCallPost('','fetch_categary').then(function(response) {
+            $scope.parent_categary = response['parent_categary'];
+            $scope.sub_categary = response['sub_categary'];
+
+        });}
+       
     }); 
     app.controller('singleInfotainment', function($scope,Services,appConst,$rootScope,$stateParams){
         var id = {media_id:$stateParams.mediaId};
